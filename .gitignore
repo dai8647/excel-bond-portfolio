@@ -1,0 +1,83 @@
+# ---- デバッグ・一時ファイル（リポに含めない） ----
+
+# 巨大ファイル / 生 HTML / JS スクレイプ残骸
+dsd.xml
+*.html
+*.js
+jpx_*
+eurex_*
+pensford.html
+pens_fwd.html
+chatham*.html
+cf_*
+
+# bisect / probe / test 系（デバッグ用）
+bisect_*
+probe*
+test_*
+xp_*
+xp2_*
+off_*
+only_*
+dash_*
+minimal.xlsx
+com_test.xlsx
+roundtrip.xlsx
+verify_copy.xlsx
+sheet_*.py
+xml_probe*.py
+dash_*.py
+collect*.py
+build_wb*.py
+write_*.py
+patch_bas.py
+
+# 一次性 gen_*/fix_*/inspect_*/verify_*/final_* デバッグスクリプト
+# （コアの gen_sig_backtest.py / sig_backtest.ps1 は除外しない）
+gen_fix_*.py
+gen_debug_*.py
+gen_inspect_*.py
+gen_verify_sig.py
+gen_final_verify.py
+gen_final_sig.py
+gen_add_bands.py
+fix_*.ps1
+debug_note.ps1
+inspect_*.ps1
+verify_*.ps1
+final_*.ps1
+final_*.py
+check_hist.ps1
+add_bands.ps1
+sig_backtest_dbg.ps1
+test_*.ps1
+qa_div0.*
+
+# ダンプ / ログ / 一時 json・csv
+*.log
+kpi_dump.txt
+risk_dump.txt
+charset_test.txt
+qa_scan.txt
+qa_div0.txt
+buba*
+fc_*.json
+gdbe_test.json
+cme_sofr.json
+var_rows.json
+stooq_*.csv
+nul
+
+# 展開ディレクトリ
+unz/
+xml_bad/
+
+# バックアップ
+*.bak
+*.bak-*
+DataUpdater_original.bas
+HttpTest.bas
+
+# Python
+__pycache__/
+*.pyc
