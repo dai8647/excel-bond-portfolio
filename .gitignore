@@ -53,6 +53,13 @@ sig_backtest_dbg.ps1
 test_*.ps1
 qa_div0.*
 
+# 今セッションの点検・一時成果物
+button_report.txt
+btn_geom.txt
+dash_layout.txt
+verify_fix.txt
+standalone_result.txt
+
 # ダンプ / ログ / 一時 json・csv
 *.log
 kpi_dump.txt

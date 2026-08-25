@@ -83,7 +83,7 @@ Private Sub LogMsg(ByVal s As String)
     On Error Resume Next
     Dim f As Integer
     f = FreeFile
-    Open "C:\Users\dai86\.zcode\workspace\default\capula_rv\vba_progress.log" For Append As #f
+    Open ThisWorkbook.Path & "\vba_progress.log" For Append As #f
     Print #f, Format(Now, "hh:mm:ss") & " " & s
     Close #f
     On Error GoTo 0
@@ -95,7 +95,7 @@ Public Sub UpdateDataSilent()
     Application.Calculation = xlCalculationManual
 
     On Error Resume Next
-    Kill "C:\Users\dai86\.zcode\workspace\default\capula_rv\vba_progress.log"
+    Kill ThisWorkbook.Path & "\vba_progress.log"
     On Error GoTo 0
 
     Dim ust As Object, jgb As Object, fund As Object

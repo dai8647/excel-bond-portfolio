@@ -28,8 +28,9 @@ try {
     for ($i = $d.Shapes.Count; $i -ge 1; $i--) {
         if ($d.Shapes.Item($i).Name -eq "CapulaUpdateBtn") { $d.Shapes.Item($i).Delete() }
     }
-    $rng = $d.Range("B4:C4")
-    $shp = $d.Shapes.AddShape(5, $rng.Left, $rng.Top, $rng.Width, $rng.Height)  # 5 = msoShapeRoundedRectangle
+    $d.Rows.Item(4).RowHeight = 32
+    $rng = $d.Range("B4")
+    $shp = $d.Shapes.AddShape(5, $rng.Left, ($rng.Top + 1), 260, 30)  # 5 = msoShapeRoundedRectangle
     $shp.Name = "CapulaUpdateBtn"
     $shp.Fill.ForeColor.RGB = 0x00805435  # will set properly below
     # green 548235 -> RGB(84,130,53); Excel RGB = R + G*256 + B*65536
@@ -38,10 +39,11 @@ try {
     $shp.TextFrame2.TextRange.Text = "▶ データ更新(ヒストリカル取得)"
     $shp.TextFrame2.TextRange.Font.Fill.ForeColor.RGB = (255 + 255*256 + 255*65536)
     $shp.TextFrame2.TextRange.Font.Bold = $true
-    $shp.TextFrame2.TextRange.Font.Size = 12
+    $shp.TextFrame2.TextRange.Font.Size = 13
     $shp.TextFrame2.VerticalAnchor = 1  # middle
     $shp.TextFrame2.TextRange.ParagraphFormat.Alignment = 2  # center
     $shp.OnAction = "UpdateData"
+    $shp.ZOrder(0)  # bring to front
     Write-Output "button wired to UpdateData"
 
     # --- save as .xlsm (52 = xlOpenXMLWorkbookMacroEnabled) ---
