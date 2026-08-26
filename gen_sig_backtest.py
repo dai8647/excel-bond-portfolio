@@ -54,7 +54,7 @@ def dd_f(cc, pc):
 
 ps = []
 ps.append('$ErrorActionPreference = "Stop"')
-ps.append('$src = "C:\\Users\\dai86\\Downloads\\Capula_BondRV_Model.xlsm"')
+ps.append('$src = "C:\\Users\\dai86\\Downloads\\BondRV_Model.xlsm"')
 ps.append('$xl = New-Object -ComObject Excel.Application')
 ps.append('$xl.Visible = $false')
 ps.append('$xl.DisplayAlerts = $false')

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build the Capula-style bond RV model workbook.
+"""Build the bond RV model workbook.
 Part 1: helpers + DV01 math + instrument master.
 """
 import datetime as dt

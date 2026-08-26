@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
-$src = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$tmp = "C:\Users\dai86\.zcode\workspace\default\capula_rv\standalone_test.xlsm"
-$log = "C:\Users\dai86\.zcode\workspace\default\capula_rv\vba_progress.log"
-$out = "C:\Users\dai86\.zcode\workspace\default\capula_rv\standalone_result.txt"
+$src = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$tmp = "C:\Users\dai86\.zcode\workspace\default\bond_rv\standalone_test.xlsm"
+$log = "C:\Users\dai86\.zcode\workspace\default\bond_rv\vba_progress.log"
+$out = "C:\Users\dai86\.zcode\workspace\default\bond_rv\standalone_result.txt"
 Copy-Item $src $tmp -Force
 if (Test-Path $log) { Remove-Item $log -Force }
 Get-Process EXCEL -ErrorAction SilentlyContinue | Stop-Process -Force

@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
-$src = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$out = "C:\Users\dai86\.zcode\workspace\default\capula_rv\DataUpdater_original.bas"
+$src = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$out = "C:\Users\dai86\.zcode\workspace\default\bond_rv\DataUpdater_original.bas"
 $xl = New-Object -ComObject Excel.Application
 $xl.Visible = $false
 $xl.DisplayAlerts = $false

@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$src = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
+$src = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
 $xl = New-Object -ComObject Excel.Application
 $xl.Visible = $false
 $xl.DisplayAlerts = $false

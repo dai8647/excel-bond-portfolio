@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Continue"
-$xlsm = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$rep  = "C:\Users\dai86\.zcode\workspace\default\capula_rv\qa_design_report.txt"
+$xlsm = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$rep  = "C:\Users\dai86\.zcode\workspace\default\bond_rv\qa_design_report.txt"
 Get-Process EXCEL -ErrorAction SilentlyContinue | Stop-Process -Force
 Start-Sleep 2
 $excel = New-Object -ComObject Excel.Application

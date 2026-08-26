@@ -1,10 +1,10 @@
-# Capula 型 債券レラティブバリュー（RV）モデル
+# 債券レラティブバリュー（RV）モデル
 
-Capula Investment Management のスタイルを参考にした、**債券 RV ポートフォリオ管理モデル**です。
-成果物は Excel マクロ有効ブック `Capula_BondRV_Model.xlsm`（16 シート・8 戦略）。
+海外大手ヘッジファンドのスタイルを参考にした、**債券 RV ポートフォリオ管理モデル**です。
+成果物は Excel マクロ有効ブック `BondRV_Model.xlsm`（16 シート・8 戦略）。
 本リポジトリには、そのモデルを**ゼロから再生成・日次更新するための一式**を収めています。
 
-> ⚠️ 本モデルは教育・研究用の自作サンプルであり、Capula 社とは無関係です。投資助言ではありません。
+> ⚠️ 本モデルは教育・研究用の自作サンプルです。投資助言ではありません。
 
 ---
 
@@ -60,7 +60,7 @@ Capula Investment Management のスタイルを参考にした、**債券 RV ポ
 ```bash
 python build_v3.py
 ```
-- `Capula_BondRV_Model.xlsx` を生成 → その後 VBA を注入して `.xlsm` 化します。
+- `BondRV_Model.xlsx` を生成 → その後 VBA を注入して `.xlsm` 化します。
 - ビルド時のデータ行数・容量定数は `build_v3.py` 冒頭を参照。
 
 ### 2) VBA を注入する（.xlsm 化）
@@ -105,7 +105,7 @@ qa_scan.ps1            # #エラー走査
 gen_sig_backtest.py    # シグナル検証シート生成スクリプト
 sig_backtest.ps1       # シグナル検証シート適用（COM）
 data/                  # 生データ CSV 一式
-Capula_BondRV_Model.xlsm  # 成果物（VBA 込み）
+BondRV_Model.xlsm  # 成果物（VBA 込み）
 ```
 
 ---

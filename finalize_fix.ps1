@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
-$xlsm = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$bas  = "C:\Users\dai86\.zcode\workspace\default\capula_rv\DataUpdater.bas"
+$xlsm = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$bas  = "C:\Users\dai86\.zcode\workspace\default\bond_rv\DataUpdater.bas"
 Get-Process EXCEL -ErrorAction SilentlyContinue | Stop-Process -Force
 Start-Sleep 2
 $excel = New-Object -ComObject Excel.Application
@@ -21,7 +21,7 @@ $btn = $null
 $dash = $null
 foreach ($ws in $wb.Worksheets) {
     foreach ($sh in $ws.Shapes) {
-        if ($sh.Name -eq "CapulaUpdateBtn") { $btn = $sh; $dash = $ws }
+        if ($sh.Name -eq "RVUpdateBtn") { $btn = $sh; $dash = $ws }
     }
 }
 if ($btn -ne $null) {

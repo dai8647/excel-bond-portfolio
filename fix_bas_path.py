@@ -1,8 +1,8 @@
 import io
-p = r"C:\Users\dai86\.zcode\workspace\default\capula_rv\DataUpdater.bas"
+p = r"C:\Users\dai86\.zcode\workspace\default\bond_rv\DataUpdater.bas"
 with open(p, "rb") as f:
     b = f.read()
-old = br'"C:\Users\dai86\.zcode\workspace\default\capula_rv\vba_progress.log"'
+old = br'"C:\Users\dai86\.zcode\workspace\default\bond_rv\vba_progress.log"'
 new = br'ThisWorkbook.Path & "\vba_progress.log"'
 n = b.count(old)
 b2 = b.replace(old, new)

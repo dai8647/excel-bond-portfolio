@@ -3,7 +3,7 @@ $xl = New-Object -ComObject Excel.Application
 $xl.Visible = $false
 $xl.DisplayAlerts = $false
 try {
-    $wb = $xl.Workbooks.Open("C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm")
+    $wb = $xl.Workbooks.Open("C:\Users\dai86\Downloads\BondRV_Model.xlsm")
     $xl.CalculateFull()
     $lines = @()
     # scan every sheet for error values
@@ -35,7 +35,7 @@ try {
         $lines += ($ws.Name + " errors=" + $errCount)
         foreach ($s in $errSamples) { $lines += $s }
     }
-    $lines | Out-File -FilePath "C:\Users\dai86\.zcode\workspace\default\capula_rv\qa_scan.txt" -Encoding utf8
+    $lines | Out-File -FilePath "C:\Users\dai86\.zcode\workspace\default\bond_rv\qa_scan.txt" -Encoding utf8
     Write-Output "scan done"
     $wb.Close($false)
 } catch {

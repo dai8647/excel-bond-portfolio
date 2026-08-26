@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Capula型 債券RVモデル v3 — ファンド管理版
+"""債券RVモデル v3 — ファンド管理版
 履歴データ=唯一のデータ源。全シート数式参照。VBA更新対応。BDPなし。
 """
 import datetime as dt
@@ -12,7 +12,7 @@ from openpyxl.chart import LineChart, Reference
 from master_hist import build_master
 from dv01 import par_mod_dur, dv01_per_1mm
 
-OUT = r"C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsx"
+OUT = r"C:\Users\dai86\Downloads\BondRV_Model.xlsx"
 
 NAV_BASE = 100.0  # 仮NAV基数 $mm
 
@@ -531,7 +531,7 @@ print("トレード台帳 構築完了")
 wsD=wb.create_sheet("ダッシュボード",0)
 wsD.sheet_view.showGridLines=False
 set_widths(wsD,[3,30,16,16,16,16,16,16])
-title_block(wsD,"ブック ダッシュボード","Capula型 債券RV — 仮NAV・リスク指標・戦略サマリ / 基準日 "+ASOF,8)
+title_block(wsD,"ブック ダッシュボード","債券RV — 仮NAV・リスク指標・戦略サマリ / 基準日 "+ASOF,8)
 
 # 更新ボタン(VBA)
 wsD.cell(row=4,column=2,value="▶ データ更新(ヒストリカル取得)").font=Font(bold=True,color="FFFFFF",size=12)
@@ -971,7 +971,7 @@ strat_cards=[
   "DV01ヘッジではなく低相関分散。金利戦略と独立した収益源。",
   round(CARRY_S5)),
  ("S6 UST 10年 ベーシス",
-  "米10年現物買い、ZN先物売り = ベーシス買い。Capulaの代名詞。",
+  "米10年現物買い、ZN先物売り = ベーシス買い。RVファンドの代名詞。",
   "現先ベーシスが受渡に向けて収斂するのを狙い、レポ調達でキャリーを稼ぐ。",
   "先物売りが現物のDV01を相殺し水準除去。【注意】レポレバレッジのため2020年3月のようなベーシス急拡大が最大リスク。",
   round(CARRY_S6)),
@@ -1049,10 +1049,10 @@ ws.cell(row=r+1,column=2,value="※BBGを使う場合、ティッカー列を参
 ws=wb.create_sheet("はじめに",0)
 ws.sheet_view.showGridLines=False
 set_widths(ws,[3,118])
-title_block(ws,"Capula型 債券レラティブバリュー(RV)モデル — ファンド管理版","v3.0 / マクロ(VBA)でデータ更新 / 基準日 "+ASOF,2)
+title_block(ws,"債券レラティブバリュー(RV)モデル — ファンド管理版","v3.0 / マクロ(VBA)でデータ更新 / 基準日 "+ASOF,2)
 readme=[
 ("これは何か",
- "ヘッジファンドCapula Investment Managementのスタイルを模した、債券レラティブバリュー(相対価値)戦略の"
+ "海外大手ヘッジファンドのスタイルを模した、債券レラティブバリュー(相対価値)戦略の"
  "モデルポートフォリオ+ファンド管理フレームです。8戦略をDV01ヘッジ済み・キャリー/レポコスト込みで組み、"
  "仮NAV・シャーレシオ・最大DD・VaR・エントリーシグナル・トレード台帳まで備えています。"),
 ("【重要】データ更新はマクロ(VBA)で行います",
@@ -1099,7 +1099,7 @@ from openpyxl.formatting.rule import CellIsRule
 ws=wb.create_sheet("リスク")
 ws.sheet_view.showGridLines=False
 set_widths(ws,[3,28,36,12,12,12,12,12,12,12,12,12])
-title_block(ws,"リスク管理 — VaR・ストレステスト・グリークス・リミット","Capula型: 日次VaR+ストレステスト+ポジションリミット+流動性監視。全数式は分析データ参照なのでVBA更新で自動再計算。",12)
+title_block(ws,"リスク管理 — VaR・ストレステスト・グリークス・リミット","基本方針: 日次VaR+ストレステスト+ポジションリミット+流動性監視。全数式は分析データ参照なのでVBA更新で自動再計算。",12)
 
 WARN_FILL=PatternFill("solid",fgColor="FFEB9C")
 
@@ -1300,7 +1300,7 @@ delev=[
  "DD -15% → 全戦略を30%サイズ削減。",
  "DD -25%(STOP) → 50%削減 + S6(ベーシス)を最優先で解消(レポレバレッジが最も高い)。",
  "SOFRスパイク >25bp → ファンディングストレスと判定し、S6のレバレッジを先に落とす。",
- "実績: 2020年3月のベーシス爆発でCapula -$572mm、ExodusPoint -$360mm、Millennium -$100mm(WSJ/Bloomberg)。",
+ "実績: 2020年3月のベーシス爆発で大手RVファンド -$572mm、ExodusPoint -$360mm、Millennium -$100mm(WSJ/Bloomberg)。",
  "レバレッジの高いベーシストレードは、ベーシス拡大+マージンコールの連鎖で殺される。流動性監視が最優先。",
 ]
 for t in delev:

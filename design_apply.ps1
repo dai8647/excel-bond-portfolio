@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = "Stop"
-$xlsm = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$bak  = "C:\Users\dai86\Downloads\Capula_BondRV_Model.bak-design.xlsm"
+$xlsm = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$bak  = "C:\Users\dai86\Downloads\BondRV_Model.bak-design.xlsm"
 Copy-Item $xlsm $bak -Force
 Write-Output "backup ok"
 
@@ -119,7 +119,7 @@ foreach ($ws in $wb.Worksheets) {
 Write-Output "tabs ok"
 
 # dynamic date subtitle
-$d = '="Capula型 債券RV — 仮NAV・リスク指標・戦略サマリ / 基準日 "&TEXT(MAX(履歴データ!$A:$A),"yyyy-mm-dd")'
+$d = '="債券RV — 仮NAV・リスク指標・戦略サマリ / 基準日 "&TEXT(MAX(履歴データ!$A:$A),"yyyy-mm-dd")'
 $d2 = '="v3.0 / マクロ(VBA)でデータ更新 / 基準日 "&TEXT(MAX(履歴データ!$A:$A),"yyyy-mm-dd")'
 
 # ============ 2. はじめに (sheet1) ============
@@ -203,7 +203,7 @@ $ws.Columns.Item("F").ColumnWidth = 21
 $ws.Columns.Item("G").ColumnWidth = 13
 $ws.Columns.Item("H").ColumnWidth = 8
 try {
-    $ws.Range("A1").Value2 = "Capula型 債券RVモデル — ダッシュボード"
+    $ws.Range("A1").Value2 = "債券RVモデル — ダッシュボード"
     $ws.Range("A1:A2").Interior.Color = $NAVY
     $ws.Range("A1").Font.Color = $WHITE
     $ws.Range("A1").Font.Size = 13

@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = "Stop"
-$src = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsx"
-$dst = "C:\Users\dai86\Downloads\Capula_BondRV_Model.xlsm"
-$bas = "C:\Users\dai86\.zcode\workspace\default\capula_rv\DataUpdater.bas"
+$src = "C:\Users\dai86\Downloads\BondRV_Model.xlsx"
+$dst = "C:\Users\dai86\Downloads\BondRV_Model.xlsm"
+$bas = "C:\Users\dai86\.zcode\workspace\default\bond_rv\DataUpdater.bas"
 if (Test-Path $dst) { Remove-Item $dst -Force }
 
 $xl = New-Object -ComObject Excel.Application
@@ -24,14 +24,14 @@ try {
     $d = $wb.Sheets.Item("ダッシュボード")
     # clear the placeholder cell visual (we will draw a real shape button)
     $d.Range("B4:C4").Clear()
-    # remove any old shapes named CapulaUpdateBtn
+    # remove any old shapes named RVUpdateBtn
     for ($i = $d.Shapes.Count; $i -ge 1; $i--) {
-        if ($d.Shapes.Item($i).Name -eq "CapulaUpdateBtn") { $d.Shapes.Item($i).Delete() }
+        if ($d.Shapes.Item($i).Name -eq "RVUpdateBtn") { $d.Shapes.Item($i).Delete() }
     }
     $d.Rows.Item(4).RowHeight = 32
     $rng = $d.Range("B4")
     $shp = $d.Shapes.AddShape(5, $rng.Left, ($rng.Top + 1), 260, 30)  # 5 = msoShapeRoundedRectangle
-    $shp.Name = "CapulaUpdateBtn"
+    $shp.Name = "RVUpdateBtn"
     $shp.Fill.ForeColor.RGB = 0x00805435  # will set properly below
     # green 548235 -> RGB(84,130,53); Excel RGB = R + G*256 + B*65536
     $shp.Fill.ForeColor.RGB = (84 + 130*256 + 53*65536)
