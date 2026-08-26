@@ -59,6 +59,16 @@ btn_geom.txt
 dash_layout.txt
 verify_fix.txt
 standalone_result.txt
+all_sheets_dump.txt
+design_report.txt
+qa_design_report.txt
+diag*.ps1
+inspect2.*
+inspect3.*
+shot_*.ps1
+shot_*.png
+pens_*.json
+pens_rates.json
 
 # ダンプ / ログ / 一時 json・csv
 *.log
